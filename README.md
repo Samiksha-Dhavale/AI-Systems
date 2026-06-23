@@ -7,3 +7,15 @@
 3. Run scripts in the `scripts/` folder 
 
 ## Run ```bash python scripts/hello_ai.py-
+
+##  CLI Assistant
+ 
+Create a `.env` file in the project root:
+ 
+OPENAI_API_KEY=your_key_here
+ 
+Install dependencies:
+pip install -r requirements.txt
+ 
+Run:
+python scripts/cli_assistant.py
