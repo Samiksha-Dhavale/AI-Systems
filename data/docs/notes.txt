@@ -1,0 +1,41 @@
+Nimbus Cloud Services - Internal Engineering Notes
+Project: "Stratus" Migration | Author: Platform Team
+
+OVERVIEW
+We are migrating our core billing service from a monolith to microservices.
+The target completion date is Q3 2026. The goal is to reduce deployment
+time and isolate failures so one service outage does not take down billing.
+
+ARCHITECTURE DECISIONS
+- API Gateway: We chose Kong over NGINX because Kong's plugin ecosystem
+  handles rate-limiting and auth without custom code.
+- Database: Each microservice owns its own PostgreSQL instance. We avoid
+  shared databases to prevent tight coupling between services.
+- Messaging: We use Apache Kafka for async events (e.g., "invoice.created").
+  This decouples producers from consumers and allows replaying events.
+
+CURRENT BLOCKERS
+1. The legacy billing module uses stored procedures that are hard to
+   replicate in the new service. Estimated 3 weeks to rewrite the logic
+   in application code.
+2. Latency spikes observed when the payment service calls the external
+   Stripe API during peak hours. We are adding a retry queue as a fix.
+3. The search feature using OpenSearch returns stale results because the
+   indexing job runs only once per hour. We plan to move to near-real-time
+   indexing via Kafka consumers.
+
+DEPLOYMENT
+- We deploy using Kubernetes with rolling updates. Each service has a
+  minimum of 2 replicas for high availability.
+- CI/CD runs through GitHub Actions. A merge to "main" triggers automated
+  tests, then a staged rollout to 10% of traffic before full release.
+
+MONITORING
+- Metrics: Prometheus + Grafana dashboards.
+- Logs: Centralized in the ELK stack.
+- Alerts: PagerDuty notifies the on-call engineer if error rate exceeds 2%.
+
+NEXT STEPS
+- Finish rewriting the billing stored procedures by mid-July.
+- Run a load test simulating 10,000 concurrent users before go-live.
+- Document the rollback procedure in case the migration fails.

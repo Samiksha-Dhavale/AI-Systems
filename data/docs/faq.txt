@@ -1,0 +1,49 @@
+Nimbus Cloud Services - Customer Frequently Asked Questions (FAQ)
+
+Q1: What is Nimbus Cloud Services?
+A: Nimbus is a cloud hosting provider offering virtual servers, managed
+databases, and object storage. We serve startups and mid-sized businesses
+across 12 regions worldwide.
+
+Q2: How is pricing calculated?
+A: Pricing is pay-as-you-go, billed per hour of compute usage. Storage is
+billed per GB per month. There are no upfront fees and no long-term
+contracts. A detailed breakdown is available on the billing dashboard.
+
+Q3: Do you offer a free tier?
+A: Yes. New customers get a free tier that includes 1 virtual server
+(1 vCPU, 1 GB RAM) and 10 GB of object storage for the first 12 months.
+
+Q4: What is your uptime guarantee?
+A: Our Service Level Agreement (SLA) guarantees 99.95% monthly uptime.
+If uptime falls below this, customers receive service credits proportional
+to the downtime experienced.
+
+Q5: How do I get technical support?
+A: Free and Standard plans include email support with a 24-hour response
+time. Premium plans include 24/7 live chat and phone support with a
+1-hour response time.
+
+Q6: Can I upgrade or downgrade my plan?
+A: Yes, plan changes can be made anytime from the dashboard. Upgrades take
+effect immediately. Downgrades take effect at the start of the next
+billing cycle.
+
+Q7: How is my data backed up?
+A: Managed databases are automatically backed up every 6 hours, with
+backups retained for 30 days. Customers can also trigger manual snapshots
+at any time.
+
+Q8: Which payment methods do you accept?
+A: We accept major credit cards, PayPal, and bank transfers. Bank transfers
+are available only for annual Premium plans.
+
+Q9: How do I cancel my account?
+A: You can cancel anytime from the account settings page. Billing stops at
+the end of the current cycle. Stored data is permanently deleted 30 days
+after cancellation.
+
+Q10: Where are your data centers located?
+A: We operate in 12 regions including North America, Europe, India,
+Singapore, and Australia. You can choose your preferred region when
+creating a resource.

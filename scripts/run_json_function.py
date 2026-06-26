@@ -1,0 +1,8 @@
+import json, sys, os
+sys.path.insert(0, os.path.dirname(os.path.dirname(os.path.abspath(__file__))))
+from src.ai_json_function import analyze_text_to_validated_json
+ 
+text = "Subject: Urgent password reset required. Click http://fake-link.example now."
+result = analyze_text_to_validated_json(text)
+ 
+print(json.dumps(result, indent=2))
